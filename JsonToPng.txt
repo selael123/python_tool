@@ -1,0 +1,8 @@
+#轉換json to dataset用
+setlocal
+set "yourDir=D:\jo\Unet-Segmentation-Pytorch-Nest-of-Unets-master\fishdata\bbox\bbox_seg"
+set "yourExt=*.json"
+pushd %yourDir%
+for %a in (*%yourExt%) do (labelme_json_to_dataset "%a" -o %"%~na")
+popd
+endlocal
